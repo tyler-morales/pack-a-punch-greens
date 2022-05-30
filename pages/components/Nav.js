@@ -41,7 +41,10 @@ export const Nav = () => {
       className={`${
         toggleMenu ? 'bg-brand' : 'bg-none'
       } border-b-2 border-white transition-all`}>
-      <div className="py-4 flex flex-col items-center justify-between max-w-5xl px-5 m-auto lg:flex-row ">
+      <div
+        className={`${
+          toggleMenu ? 'py-8' : 'py-4'
+        } flex flex-col items-center justify-between max-w-5xl px-5 m-auto lg:flex-row`}>
         {/* Page links */}
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/microgreens">

@@ -73,7 +73,7 @@ export const Nav = () => {
                 src={`/images/logo-${toggleMenu ? 'white' : 'green'}.svg`}
                 width={150}
                 height={75}
-                layou="responsive"
+                // layout="responsive"
                 alt="Pack A Punch Logo"
               />
             </a>

@@ -9,14 +9,6 @@ body {
   font-weight: 900;
 }
 
-h1 {
-  font-family: 'Quincy', serif;
-}
-
-h2 {
-  font-family: 'Greycliff', sans;
-}
-
 /* Fonts */
 @font-face {
   font-family: 'Quincy';
@@ -47,6 +39,14 @@ h2 {
   src: url('/fonts/GreycliffCF-Medium.woff2');
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Greycliff';
+  src: url('/fonts/GreycliffCF-Bold.woff');
+  font-style: normal;
+  font-weight: 700;
   font-display: swap;
 }
 

@@ -1,24 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import {useState, useEffect} from 'react'
 import Link from 'next/link'
-import {Auth} from 'aws-amplify'
+import Image from 'next/image'
 import {Cross as Hamburger} from 'hamburger-react'
-import checkUser from '../../hooks/checkUser'
-import {useRouter} from 'next/router'
 
-import useQuery from '../../hooks/useQuery'
-
-import {FaSearch} from 'react-icons/fa'
-
-export const Nav = ({mockUser}) => {
-  const router = useRouter()
-  const user = checkUser()
-  const {searchQuery, dispatch} = useQuery()
-
+export const Nav = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(0)
   const [isOpen, setOpen] = useState(false)
-  const [searchInput, setSearchInput] = useState('')
+
+  console.log(toggleMenu)
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)
@@ -34,133 +25,92 @@ export const Nav = ({mockUser}) => {
 
     window.addEventListener('resize', changeWidth)
 
+    // Close mobile menu on resize (browser increases width)
+    if (screenWidth > 1024) {
+      setToggleMenu(false)
+      setOpen(false)
+    }
+
     return () => {
       window.removeEventListener('resize', changeWidth)
     }
-  }, [])
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSearchInput(e.target.value)
-
-    dispatch({
-      type: 'SET_QUERY',
-      payload: searchInput,
-    })
-
-    router.push(`/results/?q=${searchInput}&start=0`)
-    setSearchInput('')
-  }
+  }, [screenWidth])
 
   return (
-    <nav className="flex justify-between py-5 lg:w-10/12 m-auto items-center max-w-[1200px] px-5 lg:px-0 flex-col md:flex-row w-full bg-[#f5f5ee]">
-      <div className="flex flex-col items-center w-full lg:w-max md:flex-row">
-        <div className="flex items-center justify-between w-full md:w-max md:pr-8">
+    <nav
+      className={`${
+        toggleMenu ? 'bg-brand' : 'bg-none'
+      } border-b-2 border-white transition-all`}>
+      <div className="py-4 flex flex-col items-center justify-between max-w-5xl px-5 m-auto lg:flex-row ">
+        {/* Page links */}
+        {(toggleMenu || screenWidth > 1024) && (
+          <Link href="/microgreens">
+            <a
+              className={` ${
+                toggleMenu ? 'text-white' : 'text-brand'
+              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
+              Microgreens
+            </a>
+          </Link>
+        )}
+
+        {(toggleMenu || screenWidth > 1024) && (
+          <Link href="/about-us">
+            <a
+              className={` ${
+                toggleMenu ? 'text-white' : 'text-brand'
+              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
+              About us
+            </a>
+          </Link>
+        )}
+        <div className="flex items-center justify-between w-full -order-1 lg:order-[unset]">
           {/* Logo */}
           <Link href="/">
-            <a className="md:rounded-md ">
-              <img
-                src="/images/logo.svg"
-                alt="Pack A Punch logo"
-                width="150px"
-                className="cursor-pointer"
+            <a className="flex items-center gap-6 group">
+              <Image
+                src={`/images/logo-${toggleMenu ? 'white' : 'green'}.svg`}
+                width={150}
+                height={75}
+                layou="responsive"
+                alt="Pack A Punch Logo"
               />
             </a>
           </Link>
 
-          {/* Hamburger button */}
-          <button
-            data-cy="hamburger-icon"
-            onClick={toggleNav}
-            className="cursor-pointer md:hidden">
-            <Hamburger
-              color="rgb(22 101 52)"
-              toggled={isOpen}
-              toggle={setOpen}
-            />
-          </button>
-        </div>
-
-        {(toggleMenu || screenWidth > 768) && (
-          <div className="flex flex-col w-full md:gap-6 md:flex-row md:w-min">
-            {/* Parks */}
-            <Link href="/parks">
-              <a
-                data-cy="parks"
-                className="w-full p-4 py-4 text-xl font-bold text-center text-green-800 transition-all duration-200 ease-in-out border-b border-green-800 cursor-pointer font-display border-b-green-800 md:border-0 md:hover:bg-transparent md:hover:text-green-800 hover:bg-green-800 hover:text-white lg:pass md:rounded-md md:py-2">
-                Parks
-              </a>
-            </Link>
-
-            {/* About */}
-            <Link href="/events">
-              <a
-                data-cy="events-page"
-                className="w-full p-4 py-4 text-xl font-bold text-center text-green-800 transition-all duration-200 ease-in-out border-b border-green-800 cursor-pointer font-display border-b-green-800 md:border-0 md:hover:bg-transparent md:hover:text-green-800 hover:bg-green-800 hover:text-white lg:pass md:rounded-md md:py-2">
-                Events
-              </a>
-            </Link>
-          </div>
-        )}
-      </div>
-
-      {screenWidth > 1100 && (
-        <form onSubmit={handleSubmit} className="flex gap-4">
-          <input
-            className="px-4 py-2 rounded-md "
-            type="text"
-            placeholder="Search for anything"
-            value={searchInput}
-            name="search"
-            onChange={(e) => setSearchInput(e.target.value)}
-          />
-          <button
-            className="px-4 py-2 font-bold text-white transition-all bg-green-700 border-2 border-transparent rounded-md focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-2 focus-visible:outline-blue-500 focus:transition-none hover:bg-green-600"
-            type="submit">
-            <FaSearch />
-          </button>
-        </form>
-      )}
-
-      {(toggleMenu || screenWidth > 768) && (
-        <div className="flex flex-col items-center w-full text-center lg:w-max md:flex-row md:text-left md:justify-end md:gap-6">
-          {user || mockUser ? (
-            <>
-              {/* Profile */}
-              <Link href="/profile">
-                <a className="w-full py-4 text-xl font-bold text-green-800 transition-all duration-200 ease-in-out border-b border-green-800 cursor-pointer lg:w-min -4 font-display md:border-b-0 border-b-green-800 hover:bg-green-800 hover:text-white md:hover:bg-transparent md:hover:text-green-800 lg:pass md:rounded-md md:py-2">
-                  Profile
-                </a>
-              </Link>
-
-              {/* Logout */}
-              <button
-                onClick={() => {
-                  Auth.signOut()
-                  router.push('/')
-                }}
-                className="w-full p-4 py-4 text-xl font-bold text-green-800 transition-all duration-200 ease-in-out border-green-800 cursor-pointer md:border-2 lg:w-max font-display border-b-green-800 hover:bg-green-800 hover:text-white md:hover:bg-transparent md:rounded-md md:py-2 md:border-green-800 md:hover:bg-green-800 md:hover:text-white focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-2 focus-visible:outline-blue-500 focus:transition-none">
-                Log out
-              </button>
-            </>
-          ) : (
-            <>
-              {/* Login */}
-              <Link href="/login">
-                <a className="p-4 py-4 text-xl font-bold text-green-800 transition-all duration-200 ease-in-out border-green-800 cursor-pointer font-display md:border-b-0 border-b-green-800 hover:bg-green-800 hover:text-white md:hover:bg-transparent md:hover:text-green-800 lg:pass md:rounded-md md:py-2">
-                  Log in
-                </a>
-              </Link>
-              {/* Signup */}
-              <Link href="/signup">
-                <a className="p-4 py-4 text-xl font-bold text-green-800 transition-all duration-200 ease-in-out border-2 border-green-800 cursor-pointer font-display border-b-green-800 hover:bg-green-800 hover:text-white md:hover:bg-transparent md:rounded-md md:py-2 md:border-green-800 md:hover:bg-green-800 md:hover:text-white focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-2 focus-visible:outline-blue-500 focus:transition-none">
-                  Create Account
-                </a>
-              </Link>
-            </>
+          {/* Hamburger Menu Icon */}
+          {screenWidth < 1024 && (
+            <button onClick={toggleNav}>
+              <Hamburger
+                toggled={isOpen}
+                toggle={setOpen}
+                color={`${toggleMenu ? '#fff' : '#2B9347'}`}
+              />
+            </button>
           )}
         </div>
-      )}
+
+        {(toggleMenu || screenWidth > 1024) && (
+          <Link href="/sustainability">
+            <a
+              className={` ${
+                toggleMenu ? 'text-white' : 'text-brand'
+              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
+              Sustainability
+            </a>
+          </Link>
+        )}
+        {(toggleMenu || screenWidth > 1024) && (
+          <Link href="/contact">
+            <a
+              className={` ${
+                toggleMenu ? 'text-white' : 'text-brand'
+              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
+              Contact
+            </a>
+          </Link>
+        )}
+      </div>
     </nav>
   )
 }

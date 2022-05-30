@@ -9,8 +9,6 @@ export const Nav = () => {
   const [screenWidth, setScreenWidth] = useState(0)
   const [isOpen, setOpen] = useState(false)
 
-  console.log(toggleMenu)
-
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)
     setOpen(!isOpen)

@@ -9,7 +9,13 @@ module.exports = {
       sans: ['Greycliff', 'Roboto', 'sans-serif'],
       serif: ['Quincy', 'serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT: '#2B9347',
+        },
+      },
+    },
   },
   plugins: [],
 }

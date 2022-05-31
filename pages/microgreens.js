@@ -13,7 +13,7 @@ export default function microgreens() {
         <div className="bg-green-100 flex justify-center px-6">
           <div className="w-[350px] py-20">
             <Image
-              src="/images/packaging.jpg"
+              src="/images/packaging-broccoli.png"
               width={300}
               height={300}
               layout="responsive"
@@ -34,7 +34,7 @@ export default function microgreens() {
         <div className="bg-rose-100 flex justify-center px-6">
           <div className="w-[350px] py-20">
             <Image
-              src="/images/packaging.jpg"
+              src="/images/packaging-radish.png"
               width={300}
               height={300}
               layout="responsive"
@@ -55,7 +55,7 @@ export default function microgreens() {
         <div className="bg-green-200 flex justify-center px-6">
           <div className="w-[350px] py-20">
             <Image
-              src="/images/packaging.jpg"
+              src="/images/packaging-arugula.png"
               width={300}
               height={300}
               layout="responsive"
@@ -76,7 +76,7 @@ export default function microgreens() {
       <div className="bg-orange-200 flex justify-center px-6">
         <div className="w-[350px] py-20">
           <Image
-            src="/images/packaging.jpg"
+            src="/images/packaging-salad.png"
             width={300}
             height={300}
             layout="responsive"

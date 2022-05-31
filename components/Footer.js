@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* About Us */}
           <div className="flex flex-col gap-2">
-            <Link href="/about">
+            <Link href="/about-us">
               <a className="text-white font-bold uppercase">About us</a>
             </Link>
             <Link href="/about/mission">

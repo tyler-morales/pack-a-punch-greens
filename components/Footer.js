@@ -10,7 +10,7 @@ export default function Footer() {
           <Link href="/">
             <a className="">
               <Image
-                src="/images/logo-white.png"
+                src="/images/logo/Logo-white.png"
                 width={150}
                 height={75}
                 // layout="responsive"

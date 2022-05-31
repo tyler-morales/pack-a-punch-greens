@@ -8,7 +8,7 @@ export default function Hero() {
       </h1>
       <div className="max-w-2xl m-auto">
         <Image
-          src="/images/packaging.jpg"
+          src="/images/packaging-broccoli.png"
           width={300}
           height={300}
           layout="responsive"

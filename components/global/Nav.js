@@ -69,9 +69,9 @@ export const Nav = () => {
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-6 group">
-              {toggleMenu ? (
+              {/* {toggleMenu ? (
                 <Image
-                  src="/images/logo-white.png"
+                  src="/images/Logo-white.png"
                   width={150}
                   height={75}
                   // layout="responsive"
@@ -79,21 +79,21 @@ export const Nav = () => {
                 />
               ) : (
                 <Image
-                  src="/images/logo-green.png"
+                  src="/images/Logo-green.png"
                   width={150}
                   height={75}
                   // layout="responsive"
                   alt="Pack A Punch Logo"
                 />
-              )}
+              )} */}
 
-              {/* <Image
-                src={`/images/logo-${toggleMenu ? 'white' : 'green'}.png`}
+              <Image
+                src={`/images/logo/Logo-${toggleMenu ? 'white' : 'green'}.png`}
                 width={150}
                 height={75}
                 // layout="responsive"
                 alt="Pack A Punch Logo"
-              /> */}
+              />
             </a>
           </Link>
 

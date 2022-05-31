@@ -69,13 +69,31 @@ export const Nav = () => {
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-6 group">
-              <Image
+              {toggleMenu ? (
+                <Image
+                  src="/images/logo-white.png"
+                  width={150}
+                  height={75}
+                  // layout="responsive"
+                  alt="Pack A Punch Logo"
+                />
+              ) : (
+                <Image
+                  src="/images/logo-green.png"
+                  width={150}
+                  height={75}
+                  // layout="responsive"
+                  alt="Pack A Punch Logo"
+                />
+              )}
+
+              {/* <Image
                 src={`/images/logo-${toggleMenu ? 'white' : 'green'}.png`}
                 width={150}
                 height={75}
                 // layout="responsive"
                 alt="Pack A Punch Logo"
-              />
+              /> */}
             </a>
           </Link>
 

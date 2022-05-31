@@ -65,7 +65,7 @@ export default function QuickInfo() {
             <div className="">
               <Image
                 className="rounded-xl"
-                src="/images/home-01.jpg"
+                src="/images/food.jpeg"
                 width={1600}
                 height={900}
                 layout="responsive"
@@ -106,7 +106,7 @@ export default function QuickInfo() {
             <div className="md:-order-1">
               <Image
                 className="rounded-xl"
-                src="/images/home-01.jpg"
+                src="/images/aero.jpeg"
                 width={1600}
                 height={900}
                 layout="responsive"

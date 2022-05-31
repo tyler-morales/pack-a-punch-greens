@@ -70,7 +70,7 @@ export const Nav = () => {
           <Link href="/">
             <a className="flex items-center gap-6 group">
               <Image
-                src={`/images/logo-${toggleMenu ? 'white' : 'green'}.svg`}
+                src={`/images/logo-${toggleMenu ? 'white' : 'green'}.png`}
                 width={150}
                 height={75}
                 // layout="responsive"

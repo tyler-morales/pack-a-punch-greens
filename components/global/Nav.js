@@ -56,7 +56,7 @@ export const Nav = () => {
         )}
 
         {(toggleMenu || screenWidth > 1024) && (
-          <Link href="/about-us">
+          <Link href="/about">
             <a
               className={` ${
                 toggleMenu ? 'text-white' : 'text-brand'

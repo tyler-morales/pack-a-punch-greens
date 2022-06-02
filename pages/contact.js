@@ -9,7 +9,7 @@ export default function contact() {
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 my-20">
         {/* General */}
-        <div className="md:text-right">
+        <div id="general" className="md:text-right">
           <h2 className="text-3xl">General Info</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"
@@ -18,7 +18,7 @@ export default function contact() {
           </a>
         </div>
         {/* Sales */}
-        <div>
+        <div id="sales">
           <h2 className="text-3xl">Sales</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"
@@ -27,7 +27,7 @@ export default function contact() {
           </a>
         </div>
         {/* Press/ Media */}
-        <div className="md:text-right">
+        <div id="press" className="md:text-right">
           <h2 className="text-3xl">Press/ Media</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"
@@ -36,7 +36,7 @@ export default function contact() {
           </a>
         </div>
         {/* Feedback */}
-        <div>
+        <div id="feedback">
           <h2 className="text-3xl">Feedback</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"

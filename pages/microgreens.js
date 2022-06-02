@@ -10,7 +10,7 @@ export default function microgreens() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 mt-10">
         {/* Broccoli */}
-        <div className="bg-green-100 flex justify-center px-6">
+        <div id="broccoli" className="bg-green-100 flex justify-center px-6">
           <div className="w-[350px] py-20">
             <Image
               src="/images/packaging-broccoli.png"
@@ -31,7 +31,7 @@ export default function microgreens() {
         </div>
 
         {/* Radish */}
-        <div className="bg-rose-100 flex justify-center px-6">
+        <div id="radish" className="bg-rose-100 flex justify-center px-6">
           <div className="w-[350px] py-20">
             <Image
               src="/images/packaging-radish.png"
@@ -52,7 +52,7 @@ export default function microgreens() {
         </div>
 
         {/* Arugula */}
-        <div className="bg-green-200 flex justify-center px-6">
+        <div id="arugula" className="bg-green-200 flex justify-center px-6">
           <div className="w-[350px] py-20">
             <Image
               src="/images/packaging-arugula.png"
@@ -73,7 +73,7 @@ export default function microgreens() {
         </div>
       </div>
       {/* Salad Mix */}
-      <div className="bg-orange-200 flex justify-center px-6">
+      <div id='salad-mix' className="bg-orange-200 flex justify-center px-6">
         <div className="w-[350px] py-20">
           <Image
             src="/images/packaging-salad.png"

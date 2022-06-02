@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function Mission() {
   return (
-    <section className="px-5 h-[50vh] md:h-[90vh] grid content-center bg-yellow-100">
+    <section
+      id="mission"
+      className="px-5 h-[50vh] md:h-[100vh] grid content-center bg-yellow-100">
       <div className="max-w-7xl m-auto">
         <h1 className="text-2xl text-center font-serif border-b-2 border-brand w-max m-auto">
           Our Mission

@@ -10,10 +10,16 @@ module.exports = {
       serif: ['Quincy', 'serif'],
     },
     extend: {
+      // Colors
       colors: {
         brand: {
           DEFAULT: '#2B9347',
         },
+      },
+      // Grid template rows
+      gridTemplateRows: {
+        vision_xs: 'min-content 125px min-content',
+        vision: 'min-content 150px min-content',
       },
     },
   },

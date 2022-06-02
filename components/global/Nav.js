@@ -56,7 +56,7 @@ export const Nav = () => {
         )}
 
         {(toggleMenu || screenWidth > 1024) && (
-          <Link href="/about-us">
+          <Link href="/about">
             <a
               className={` ${
                 toggleMenu ? 'text-white' : 'text-brand'
@@ -69,24 +69,6 @@ export const Nav = () => {
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-6 group">
-              {/* {toggleMenu ? (
-                <Image
-                  src="/images/Logo-white.png"
-                  width={150}
-                  height={75}
-                  // layout="responsive"
-                  alt="Pack A Punch Logo"
-                />
-              ) : (
-                <Image
-                  src="/images/Logo-green.png"
-                  width={150}
-                  height={75}
-                  // layout="responsive"
-                  alt="Pack A Punch Logo"
-                />
-              )} */}
-
               <Image
                 src={`/images/logo/Logo-${toggleMenu ? 'white' : 'green'}.png`}
                 width={150}

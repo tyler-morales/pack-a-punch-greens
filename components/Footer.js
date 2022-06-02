@@ -27,42 +27,45 @@ export default function Footer() {
             <Link href="/microgreens">
               <a className="text-white font-bold uppercase">Microgreens</a>
             </Link>
-            <Link href="/microgreens/broccoli">
+            <Link href="/microgreens#broccoli">
               <a className="text-white font-normal">Broccoli</a>
             </Link>
-            <Link href="/microgreens/radish">
+            <Link href="/microgreens#radish">
               <a className="text-white font-normal">Radish</a>
             </Link>
-            <Link href="/microgreens/arugula">
+            <Link href="/microgreens#arugula">
               <a className="text-white font-normal">Arugula</a>
+            </Link>
+            <Link href="/microgreens#salad-mix">
+              <a className="text-white font-normal">Salad Mix</a>
             </Link>
           </div>
 
           {/* About Us */}
           <div className="flex flex-col gap-2">
-            <Link href="/about-us">
+            <Link href="/about">
               <a className="text-white font-bold uppercase">About us</a>
             </Link>
-            <Link href="/about/mission">
+            <Link href="/about#mission">
               <a className="text-white font-normal">Mission</a>
             </Link>
-            <Link href="/about/microgreens">
+            {/* <Link href="/about/microgreens">
               <a className="text-white font-normal">Microgreens</a>
-            </Link>
-            <Link href="/about/vision">
+            </Link> */}
+            <Link href="/about#vision">
               <a className="text-white font-normal">Vision</a>
             </Link>
-            <Link href="/about/technology">
+            {/* <Link href="/about/technology">
               <a className="text-white font-normal">technology</a>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Sustainability */}
           <div className="flex flex-col gap-2">
-            <Link href="/sustainability">
-              <a className="text-white font-bold uppercase">Sustainability</a>
-            </Link>
-            <Link href="/sustainability/community">
+            {/* <Link href="/sustainability"> */}
+            <a className="text-white font-bold uppercase">Sustainability</a>
+            {/* </Link> */}
+            {/* <Link href="/sustainability/community">
               <a className="text-white font-normal">Community</a>
             </Link>
             <Link href="/sustainability/resources">
@@ -73,7 +76,7 @@ export default function Footer() {
             </Link>
             <Link href="/sustainability/circular-economy">
               <a className="text-white font-normal">Circular Economy</a>
-            </Link>
+            </Link> */}
           </div>
 
           {/* About Us */}
@@ -81,16 +84,16 @@ export default function Footer() {
             <Link href="/about">
               <a className="text-white font-bold uppercase">Contact</a>
             </Link>
-            <Link href="/contact/general">
+            <Link href="/contact#general">
               <a className="text-white font-normal">General</a>
             </Link>
-            <Link href="/contact/press">
+            <Link href="/contact#press">
               <a className="text-white font-normal">Press/ Media</a>
             </Link>
-            <Link href="/contact/sales">
+            <Link href="/contact#sales">
               <a className="text-white font-normal">Sales</a>
             </Link>
-            <Link href="/contact/feedback">
+            <Link href="/contact#feedback">
               <a className="text-white font-normal">Feedback</a>
             </Link>
           </div>

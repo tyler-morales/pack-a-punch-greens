@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function microgreens() {
   return (
     <main className="max-w-7xl m-auto px-5 my-10 md:my-20">
-      <h1 className="text-brand text-5xl md:text-7xl">
+      <h1 className="text-brand text-5xl md:text-7xl font-black">
         <span>Get</span> <span>Your Microgreens</span>
       </h1>
 
@@ -26,7 +26,7 @@ export default function microgreens() {
               One of the most nutritious microgreens, broccoli is a great source
               of sulforaphane
             </p>
-            <h4 className="text-lg mt-6">$7 per 2oz container</h4>
+            <h4 className="font-bold text-lg mt-6">$7 per 2oz container</h4>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export default function microgreens() {
               Add a little bit of spice to any meal. Pair Perfectly on
               sandwhiches, burgers, eggs, and more
             </p>
-            <h4 className="text-lg mt-6">$7 per 2oz container</h4>
+            <h4 className="font-bold text-lg mt-6">$7 per 2oz container</h4>
           </div>
         </div>
 
@@ -68,12 +68,12 @@ export default function microgreens() {
               A small, but mighty little arugula packs a punch. It is a great on
               steaks and salads
             </p>
-            <h4 className="text-lg mt-6">$7 per 2oz container</h4>
+            <h4 className="font-bold text-lg mt-6">$7 per 2oz container</h4>
           </div>
         </div>
       </div>
       {/* Salad Mix */}
-      <div id='salad-mix' className="bg-orange-200 flex justify-center px-6">
+      <div id="salad-mix" className="bg-orange-200 flex justify-center px-6">
         <div className="w-[350px] py-20">
           <Image
             src="/images/packaging-salad.png"
@@ -89,7 +89,7 @@ export default function microgreens() {
             A salad mix is a great way to add a little bit of freshness to your
             meal. Try our mix of broccoli, arugula, and radish
           </p>
-          <h4 className="text-lg mt-6">$18 for 3, 2oz container</h4>
+          <h4 className="font-bold text-lg mt-6">$18 for 3, 2oz container</h4>
         </div>
       </div>
     </main>

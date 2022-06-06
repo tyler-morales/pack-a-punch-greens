@@ -62,19 +62,19 @@ export default function Footer() {
 
           {/* Sustainability */}
           <div className="flex flex-col gap-2">
-            {/* <Link href="/sustainability"> */}
-            <a className="text-white font-bold uppercase">Sustainability</a>
-            {/* </Link> */}
-            {/* <Link href="/sustainability/community">
+            <Link href="/sustainability">
+              <a className="text-white font-bold uppercase">Sustainability</a>
+            </Link>
+            <Link href="/sustainability/#community">
               <a className="text-white font-normal">Community</a>
             </Link>
-            <Link href="/sustainability/resources">
+            <Link href="/sustainability/#resources">
               <a className="text-white font-normal">Resources</a>
             </Link>
-            <Link href="/sustainability/technology">
+            <Link href="/sustainability/#technology">
               <a className="text-white font-normal">Technology</a>
             </Link>
-            <Link href="/sustainability/circular-economy">
+            {/* <Link href="/sustainability/circular-economy">
               <a className="text-white font-normal">Circular Economy</a>
             </Link> */}
           </div>

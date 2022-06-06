@@ -6,7 +6,7 @@ import {IconPlant, IconRocket, IconHome} from '@tabler/icons'
 export default function Values() {
   return (
     <section id="vision" className="my-20 md:my-40 px-8">
-      <h2 className="text-5xl md:text-7xl max-w-7xl m-auto my-10 md:my-20">
+      <h2 className="text-5xl md:text-7xl max-w-7xl m-auto my-10 md:my-20 font-bold">
         <span className="block">Our</span>
         <span>Vision</span>
       </h2>
@@ -24,7 +24,7 @@ export default function Values() {
           /> */}
           <div className="flex mb-4 gap-2 items-center">
             <IconPlant size={36} />
-            <h3 className="text-xl uppercase">Sustainability</h3>
+            <h3 className="text-xl uppercase font-bold">Sustainability</h3>
           </div>
           <p className="font-medium border-b-2 border-gray-200">
             Through practicing circular economy practices, we are consciously
@@ -62,12 +62,12 @@ export default function Values() {
           /> */}
           <div className="flex mb-4 gap-2 items-center">
             <IconRocket size={36} />
-            <h3 className="text-xl uppercase">Innovation</h3>
+            <h3 className="text-xl uppercase font-bold">Innovation</h3>
           </div>
           <p className="font-medium border-b-2 border-gray-200">
-            Through practicing circular economy practices, we are consciously
-            and deliberating choosing to benefit planet Earth and our local
-            communities.
+            In order to remain at the forefront of agriculture technology, we
+            are experimenting and testing new ways to improve our processes that
+            create tastier, nutritional, and energy low consumption microgreens
           </p>
           <ul className="font-medium text-sm list-disc mt-8 px-4 md:pt-8">
             <li>
@@ -88,7 +88,7 @@ export default function Values() {
           /> */}
           <div className="flex mb-4 gap-2 items-center">
             <IconHome size={36} />
-            <h3 className="text-xl uppercase">Community</h3>
+            <h3 className="text-xl uppercase font-bold">Community</h3>
           </div>
           <p className="font-medium border-b-2 border-gray-200">
             We believe in the idea of the local farmer and knowing where your

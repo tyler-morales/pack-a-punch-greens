@@ -3,14 +3,14 @@ import React from 'react'
 export default function contact() {
   return (
     <main className="max-w-7xl m-auto px-5">
-      <h1 className="text-brand text-center text-7xl mt-10">
+      <h1 className="text-brand text-center text-7xl mt-10 font-black">
         Let&#8217;s get in touch
       </h1>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 my-20">
         {/* General */}
         <div id="general" className="md:text-right">
-          <h2 className="text-3xl">General Info</h2>
+          <h2 className="text-3xl font-bold ">General Info</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"
             href="mailto:info@packapunchgreens.com">
@@ -19,7 +19,7 @@ export default function contact() {
         </div>
         {/* Sales */}
         <div id="sales">
-          <h2 className="text-3xl">Sales</h2>
+          <h2 className="text-3xl font-bold ">Sales</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"
             href="mailto:sales@packapunchgreens.com">
@@ -28,7 +28,7 @@ export default function contact() {
         </div>
         {/* Press/ Media */}
         <div id="press" className="md:text-right">
-          <h2 className="text-3xl">Press/ Media</h2>
+          <h2 className="text-3xl font-bold ">Press/ Media</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"
             href="mailto:media@packapunchgreens.com">
@@ -37,7 +37,7 @@ export default function contact() {
         </div>
         {/* Feedback */}
         <div id="feedback">
-          <h2 className="text-3xl">Feedback</h2>
+          <h2 className="text-3xl font-bold ">Feedback</h2>
           <a
             className="font-medium text-blue-600 underline-offset-1 underline"
             href="mailto:feedback@packapunchgreens.com">
@@ -46,7 +46,7 @@ export default function contact() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center mb-20">
+      <section className="flex flex-col items-center mb-20 font-bold">
         <h2 className="text-3xl mb-6">Drop us a line </h2>
         <a className="font-medium text-lg" href="tel:+7733188539">
           773.318.8539

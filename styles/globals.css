@@ -9,7 +9,8 @@ body {
   font-weight: 900;
 }
 
-/* Fonts */
+/* Font: QUINCY */
+
 @font-face {
   font-family: 'Quincy';
   src: url('/fonts/QuincyCF-Regular.woff');
@@ -25,6 +26,8 @@ body {
   font-weight: bold;
   font-display: swap;
 }
+
+/* Font: Greycliff */
 
 @font-face {
   font-family: 'Greycliff';
@@ -52,7 +55,7 @@ body {
 
 @font-face {
   font-family: 'Greycliff';
-  src: url('/fonts/GreycliffCF-heavy.woff');
+  src: url('/fonts/GreycliffCF-Heavy.woff');
   font-style: normal;
   font-weight: 900;
   font-display: swap;

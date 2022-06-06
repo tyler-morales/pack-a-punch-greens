@@ -5,7 +5,7 @@ import {IconPlant, IconRocket, IconHome} from '@tabler/icons'
 export default function ThreeSections() {
   return (
     <section id="vision" className="my-20 md:my-20">
-      <h2 className="text-5xl md:text-7xl max-w-7xl my-10 md:my-20 font-black">
+      <h2 className="text-5xl md:text-7xl max-w-7xl my-10 md:my-20 font-bold">
         <span className="block">Our</span>
         <span>Vision</span>
       </h2>

@@ -6,7 +6,7 @@ import {AiOutlineRight} from 'react-icons/ai'
 export default function Products() {
   return (
     <section className="m-auto mt-32">
-      <h2 className="text-5xl md:text-7xl max-w-7xl m-auto px-5 font-black">
+      <h2 className="text-5xl md:text-7xl max-w-7xl m-auto px-5 font-bold">
         <span className="block">What</span>
         <span>we&#8217;re growing</span>
       </h2>

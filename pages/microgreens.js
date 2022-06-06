@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function microgreens() {
   return (
     <main className="max-w-7xl m-auto px-5 my-10 md:my-20">
-      <h1 className="text-brand text-5xl md:text-7xl font-black">
+      <h1 className="text-brand text-5xl md:text-7xl font-bold">
         <span>Get</span> <span>Your Microgreens</span>
       </h1>
 

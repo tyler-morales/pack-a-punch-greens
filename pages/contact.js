@@ -3,7 +3,7 @@ import React from 'react'
 export default function contact() {
   return (
     <main className="max-w-7xl m-auto px-5">
-      <h1 className="text-brand text-center text-7xl mt-10 font-bold">
+      <h1 className="text-brand text-center text-7xl mt-10 font-black">
         Let&#8217;s get in touch
       </h1>
 

@@ -1,11 +1,12 @@
 import React from 'react'
+import Hero from '../components/sustainability/Hero'
+import ThreeSections from '../components/sustainability/ThreeSection'
 
 export default function sustainability() {
   return (
-    <main className="my-20 m-auto max-w-7xl">
-      <h1 className="text-4xl text-center">
-        Sustainability Section comming soon 👀
-      </h1>
+    <main className="my:10 md:my-20 m-auto max-w-7xl px-5">
+      <Hero />
+      <ThreeSections />
     </main>
   )
 }

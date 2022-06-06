@@ -3,7 +3,9 @@ import React from 'react'
 export default function Hero() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center mt-10">
-      <h1 className="text-brand text-center text-7xl">Sustainability</h1>
+      <h1 className="text-brand md:text-center text-5xl md:text-7xl">
+        Sustainability
+      </h1>
       <div className="">
         <p className="font-medium mt-8">
           Maintaining a sustainable culture environment through a circular

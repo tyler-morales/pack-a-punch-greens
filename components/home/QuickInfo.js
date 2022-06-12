@@ -6,15 +6,15 @@ export default function QuickInfo() {
     <>
       {/* Fist section */}
       <section className="px-5 bg-blue-100 lg:py-10 h-screen lg:h-[90vh] flex items-center lg:m-10 lg:rounded-3xl">
-        <div className="text-center max-w-7xl m-auto">
+        <div className="m-auto text-center max-w-7xl">
           {/* Content */}
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid items-center gap-10 md:grid-cols-2">
             {/* Text */}
             <div className="max-w-lg">
-              <h2 className="font-serif font-bold text-5xl md:text-left">
+              <h2 className="font-serif text-5xl font-bold md:text-left">
                 They&#8217;re tiny vegetables and herbs
               </h2>
-              <p className="font-medium mt-6 md:text-left">
+              <p className="mt-6 font-medium md:text-left">
                 Grown 7–12 days in an urban aeroponic farm
               </p>
             </div>
@@ -44,19 +44,19 @@ export default function QuickInfo() {
       {/* Second section */}
 
       <section className="px-5 bg-green-100 lg:py-10 h-screen lg:h-[90vh] flex items-center lg:m-10 lg:rounded-3xl">
-        <div className="text-center max-w-7xl m-auto">
+        <div className="m-auto text-center max-w-7xl">
           {/* Content */}
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid items-center gap-10 md:grid-cols-2">
             {/* Text */}
             <div className="max-w-lg">
-              <h2 className="font-serif font-bold text-4xl md:text-5xl md:text-right">
+              <h2 className="font-serif text-4xl font-bold md:text-5xl md:text-right">
                 Nutritionally dense and intensely flavorfull
               </h2>
-              <p className="font-medium mt-6 md:text-right">
+              <p className="mt-6 font-medium md:text-right">
                 Contains 40–100x more vitamins that their adult counterparts*
               </p>
 
-              <p className="font-medium mt-2 md:text-right">
+              <p className="mt-2 font-medium md:text-right">
                 Packs a a powerfull flavor to each leaf
               </p>
             </div>
@@ -85,19 +85,20 @@ export default function QuickInfo() {
 
       {/* Fist section */}
       <section className="px-5 bg-orange-100 lg:py-10 h-screen lg:h-[90vh] flex items-center lg:m-10 lg:rounded-3xl">
-        <div className="text-center max-w-7xl m-auto">
+        <div className="m-auto text-center max-w-7xl">
           {/* Content */}
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid items-center gap-10 md:grid-cols-2">
             {/* Text */}
             <div className="max-w-lg">
-              <h2 className="font-serif font-bold text-4xl md:text-5xl md:text-left">
+              <h2 className="font-serif text-4xl font-bold md:text-5xl md:text-left">
                 Grown sustainably and environmentally responsible
               </h2>
-              <p className="font-medium mt-6 md:text-left">
-                Contains 40–100x more vitamins that their adult counterparts*
+              <p className="mt-6 font-medium md:text-left">
+                Uses automation and technology to reduce resources and reuse
+                outputs
               </p>
 
-              <p className="font-medium mt-2 md:text-left">
+              <p className="mt-2 font-medium md:text-left">
                 Partners with local communities and business
               </p>
             </div>

@@ -149,6 +149,11 @@
   resolved "https://registry.yarnpkg.com/@splitbee/web/-/web-0.3.0.tgz#676ebe877b6d82a10ece6527a07f70b1994d242e"
   integrity sha512-jNPDKg0GQGa4jCaBc6JQsv0NHmBA80WCwZE49nFyhcbo32WF0GyqXeice7ZApy7OUHI16bAUAzm4MOQw3gvxfQ==
 
+"@stripe/stripe-js@^1.31.0":
+  version "1.31.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.31.0.tgz#2920bdddc3eabb5734f9ca794824e25b378533ac"
+  integrity sha512-drlXsNvd/s9S1+Ghja0aDB81N3Wr/6iRAZ7MOzKv7AtKxVdvGpOwESw3z1lHl/Wx/rvPpA7whKdB3W2CnVSArw==
+
 "@tabler/icons@^1.68.0":
   version "1.68.0"
   resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-1.68.0.tgz#047bd88966cc24ef957b3c429a13bb82cca95561"

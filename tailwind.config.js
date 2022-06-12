@@ -20,6 +20,7 @@ module.exports = {
       gridTemplateRows: {
         vision_xs: 'min-content 125px min-content',
         vision: 'min-content 150px min-content',
+        product_card: 'min-content min-content 125px min-content',
       },
     },
   },

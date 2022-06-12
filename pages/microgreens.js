@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import {initiateCheckout} from '../lib/payments'
 
 import products from '../data/products.json'
 
@@ -28,7 +28,7 @@ export default function microgreens() {
               key={id}
               id={title.toLowerCase()}
               className="flex justify-center px-6 rounded">
-              <div className="w-[350px] py-20">
+              <div className="w-[350px] py-20 grid-rows-product_card grid">
                 <Image
                   src={image}
                   width={300}
@@ -37,14 +37,25 @@ export default function microgreens() {
                   alt={altText}
                 />
                 <h3
-                  style={{background: colorDark}}
-                  className={`py-1 mt-8 font-serif text-3xl text-center text-white rounded-lg`}>
+                  style={{color: colorDark}}
+                  className="font-serif text-3xl text-center rounded-lg">
                   {title}
                 </h3>
                 <p className="mt-6 font-medium">{description}</p>
-                <h4 className="mt-6 text-lg font-bold">
-                  ${price} per 2oz container
-                </h4>
+                <button
+                  onClick={() =>
+                    initiateCheckout({
+                      lineItems: [
+                        {price: 'price_1L8EirLqXQpjFs7CGOVwh7HU', quantity: 1},
+                      ],
+                    })
+                  }
+                  className="w-full py-2 mt-4 font-bold text-center bg-green-500 rounded-lg">
+                  Start a Subscription
+                </button>
+                <p className="mt-4 text-sm font-medium text-center">
+                  Starting at ${price} per 2oz container
+                </p>
               </div>
             </div>
           )

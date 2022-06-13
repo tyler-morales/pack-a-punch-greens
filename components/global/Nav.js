@@ -2,9 +2,12 @@
 import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import {useRouter} from 'next/router'
 import {Cross as Hamburger} from 'hamburger-react'
 
 export const Nav = () => {
+  const router = useRouter()
+
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(0)
   const [isOpen, setOpen] = useState(false)
@@ -44,11 +47,12 @@ export const Nav = () => {
           toggleMenu ? 'py-8' : 'py-4'
         } flex flex-col items-center justify-between max-w-5xl px-5 m-auto lg:flex-row`}>
         {/* Page links */}
+
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/microgreens">
             <a
-              className={` ${
-                toggleMenu ? 'text-white' : 'text-brand'
+              className={` ${toggleMenu ? 'text-white' : 'text-brand'} ${
+                router.asPath == '/microgreens' ? 'bg-green-200 rounded-md' : ''
               } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
               Microgreens
             </a>
@@ -58,8 +62,8 @@ export const Nav = () => {
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/about">
             <a
-              className={` ${
-                toggleMenu ? 'text-white' : 'text-brand'
+              className={` ${toggleMenu ? 'text-white' : 'text-brand'} ${
+                router.asPath == '/about' ? 'bg-green-200 rounded-md' : ''
               } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
               About us
             </a>
@@ -94,8 +98,10 @@ export const Nav = () => {
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/sustainability">
             <a
-              className={` ${
-                toggleMenu ? 'text-white' : 'text-brand'
+              className={` ${toggleMenu ? 'text-white' : 'text-brand'} ${
+                router.asPath == '/sustainability'
+                  ? 'bg-green-200 rounded-md'
+                  : ''
               } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
               Sustainability
             </a>
@@ -104,8 +110,8 @@ export const Nav = () => {
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/contact">
             <a
-              className={` ${
-                toggleMenu ? 'text-white' : 'text-brand'
+              className={` ${toggleMenu ? 'text-white' : 'text-brand'}  ${
+                router.asPath == '/contact' ? 'bg-green-200 rounded-md' : ''
               } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
               Contact
             </a>

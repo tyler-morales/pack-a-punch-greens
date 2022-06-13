@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {useRouter} from 'next/router'
 import {Cross as Hamburger} from 'hamburger-react'
+import {FiShoppingCart} from 'react-icons/fi'
 
 export const Nav = () => {
   const router = useRouter()
@@ -38,41 +39,23 @@ export const Nav = () => {
   }, [screenWidth])
 
   return (
+    // Nav wrapper
     <nav
       className={`${
         toggleMenu ? 'bg-brand' : 'bg-none'
       } border-b-2 border-white transition-all`}>
+      {/* Nav Items */}
       <div
         className={`${
-          toggleMenu ? 'py-8' : 'py-4'
-        } flex flex-col items-center justify-between max-w-5xl px-5 m-auto lg:flex-row`}>
-        {/* Microgreens Page */}
-        {(toggleMenu || screenWidth > 1024) && (
-          <Link href="/microgreens">
-            <a
-              className={` ${toggleMenu ? 'text-white' : 'text-brand'} ${
-                router.asPath == '/microgreens' ? 'bg-green-200 rounded-md' : ''
-              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
-              Microgreens
-            </a>
-          </Link>
-        )}
-
-        {/* About Page */}
-        {(toggleMenu || screenWidth > 1024) && (
-          <Link href="/about">
-            <a
-              className={` ${toggleMenu ? 'text-white' : 'text-brand'} ${
-                router.asPath == '/about' ? 'bg-green-200 rounded-md' : ''
-              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
-              About us
-            </a>
-          </Link>
-        )}
-        <div className="flex items-center justify-between w-full -order-1 lg:order-[unset]">
+          toggleMenu ? 'py-8 items-start' : 'py-4 items-center'
+        } flex justify-between max-w-7xl px-5 m-auto lg:flex-row `}>
+        <div
+          className={`flex items-center gap-2 ${toggleMenu ? 'flex-col' : ''} ${
+            screenWidth < 1024 ? 'order-2' : ''
+          }`}>
           {/* Home page */}
           <Link href="/">
-            <a className="flex items-center gap-6 m-auto group">
+            <a className="flex">
               <Image
                 src={`/images/logo/Logo-${toggleMenu ? 'white' : 'green'}.png`}
                 width={150}
@@ -82,43 +65,94 @@ export const Nav = () => {
               />
             </a>
           </Link>
+          {/* Pages */}
 
-          {/* Hamburger Menu Icon */}
-          {screenWidth < 1024 && (
-            <button onClick={toggleNav}>
-              <Hamburger
-                toggled={isOpen}
-                toggle={setOpen}
-                color={`${toggleMenu ? '#fff' : '#2B9347'}`}
-              />
-            </button>
+          {/* Microgreens Page */}
+          {(toggleMenu || screenWidth > 1024) && (
+            <Link href="/microgreens">
+              <a
+                className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand ml-8'} ${
+                  router.asPath == '/microgreens' && !toggleMenu
+                    ? 'bg-green-200 rounded-md'
+                    : ''
+                } px-6 py-2 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
+                Microgreens
+              </a>
+            </Link>
+          )}
+          {/* About Page */}
+          {(toggleMenu || screenWidth > 1024) && (
+            <Link href="/about">
+              <a
+                className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand'} ${
+                  router.asPath == '/about' && !toggleMenu
+                    ? 'bg-green-200 rounded-md'
+                    : ''
+                } px-6 py-2 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
+                About us
+              </a>
+            </Link>
+          )}
+          {/* Sustainability Page */}
+          {(toggleMenu || screenWidth > 1024) && (
+            <Link href="/sustainability">
+              <a
+                className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand'} ${
+                  router.asPath == '/sustainability' && !toggleMenu
+                    ? 'bg-green-200 rounded-md'
+                    : ''
+                } px-6 py-2 text-lg font-bold transition-all border-b-2 lg:border-0 border-white`}>
+                Sustainability
+              </a>
+            </Link>
+          )}
+          {/* Contact Page */}
+          {(toggleMenu || screenWidth > 1024) && (
+            <Link href="/contact">
+              <a
+                className={` ${
+                  toggleMenu ? 'text-white text-center w-full' : 'text-brand'
+                }  ${
+                  router.asPath == '/contact' && !toggleMenu
+                    ? 'bg-green-200 rounded-md'
+                    : ''
+                } px-6 py-2 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
+                Contact
+              </a>
+            </Link>
           )}
         </div>
 
-        {/* Sustainability Page */}
-        {(toggleMenu || screenWidth > 1024) && (
-          <Link href="/sustainability">
-            <a
-              className={` ${toggleMenu ? 'text-white' : 'text-brand'} ${
-                router.asPath == '/sustainability'
-                  ? 'bg-green-200 rounded-md'
-                  : ''
-              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
-              Sustainability
-            </a>
-          </Link>
-        )}
+        {/* <div> */}
+        <Link href="/cart">
+          <a
+            className={` ${toggleMenu ? 'text-white' : 'text-brand'}  ${
+              router.asPath == '/cart' ? 'bg-green-200 rounded-md' : ''
+            } ${
+              screenWidth < 1024 ? '' : 'px-6'
+            } py-2 text-lg text-center font-bold transition-all`}>
+            <div className="flex items-center gap-3">
+              <FiShoppingCart size="1.25em" />
+              <span>Cart</span>
+              {/* <span className="font-medium bg-green-800 rounded-full w-[35px] text-white">
+                  1
+                </span> */}
+            </div>
+          </a>
+        </Link>
+        {/* </div> */}
 
-        {/* Contact Page */}
-        {(toggleMenu || screenWidth > 1024) && (
-          <Link href="/contact">
-            <a
-              className={` ${toggleMenu ? 'text-white' : 'text-brand'}  ${
-                router.asPath == '/contact' ? 'bg-green-200 rounded-md' : ''
-              } w-full px-4 py-4 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
-              Contact
-            </a>
-          </Link>
+        {/* Hamburger Menu Icon */}
+        {screenWidth < 1024 && (
+          <button
+            onClick={toggleNav}
+            className={`${screenWidth < 1024 ? 'order-2' : ''}`}>
+            <Hamburger
+              toggled={isOpen}
+              toggle={setOpen}
+              color={`${toggleMenu ? '#fff' : '#2B9347'}`}
+            />
+          </button>
         )}
       </div>
     </nav>

@@ -45,9 +45,7 @@ export default function microgreens() {
                 <button
                   onClick={() =>
                     initiateCheckout({
-                      lineItems: [
-                        {price: 'price_1L8EirLqXQpjFs7CGOVwh7HU', quantity: 1},
-                      ],
+                      lineItems: [{price: id, quantity: 1}],
                     })
                   }
                   className="w-full py-2 mt-4 font-bold text-center bg-green-500 rounded-lg">

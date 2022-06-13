@@ -46,8 +46,7 @@ export const Nav = () => {
         className={`${
           toggleMenu ? 'py-8' : 'py-4'
         } flex flex-col items-center justify-between max-w-5xl px-5 m-auto lg:flex-row`}>
-        {/* Page links */}
-
+        {/* Microgreens Page */}
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/microgreens">
             <a
@@ -59,6 +58,7 @@ export const Nav = () => {
           </Link>
         )}
 
+        {/* About Page */}
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/about">
             <a
@@ -70,7 +70,7 @@ export const Nav = () => {
           </Link>
         )}
         <div className="flex items-center justify-between w-full -order-1 lg:order-[unset]">
-          {/* Logo */}
+          {/* Home page */}
           <Link href="/">
             <a className="flex items-center gap-6 m-auto group">
               <Image
@@ -95,6 +95,7 @@ export const Nav = () => {
           )}
         </div>
 
+        {/* Sustainability Page */}
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/sustainability">
             <a
@@ -107,6 +108,8 @@ export const Nav = () => {
             </a>
           </Link>
         )}
+
+        {/* Contact Page */}
         {(toggleMenu || screenWidth > 1024) && (
           <Link href="/contact">
             <a

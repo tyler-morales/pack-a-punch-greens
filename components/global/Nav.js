@@ -72,7 +72,7 @@ export const Nav = () => {
             <Link href="/microgreens">
               <a
                 className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand ml-8'} ${
-                  router.asPath == '/microgreens' && !toggleMenu
+                  router.pathname == '/microgreens' && !toggleMenu
                     ? 'bg-green-200 rounded-md'
                     : ''
                 } px-6 py-2 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
@@ -85,7 +85,7 @@ export const Nav = () => {
             <Link href="/about">
               <a
                 className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand'} ${
-                  router.asPath == '/about' && !toggleMenu
+                  router.pathname == '/about' && !toggleMenu
                     ? 'bg-green-200 rounded-md'
                     : ''
                 } px-6 py-2 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
@@ -98,7 +98,7 @@ export const Nav = () => {
             <Link href="/sustainability">
               <a
                 className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand'} ${
-                  router.asPath == '/sustainability' && !toggleMenu
+                  router.pathname == '/sustainability' && !toggleMenu
                     ? 'bg-green-200 rounded-md'
                     : ''
                 } px-6 py-2 text-lg font-bold transition-all border-b-2 lg:border-0 border-white`}>
@@ -113,7 +113,7 @@ export const Nav = () => {
                 className={` ${
                   toggleMenu ? 'text-white text-center w-full' : 'text-brand'
                 }  ${
-                  router.asPath == '/contact' && !toggleMenu
+                  router.pathname == '/contact' && !toggleMenu
                     ? 'bg-green-200 rounded-md'
                     : ''
                 } px-6 py-2 text-lg text-center font-bold transition-all border-b-2 lg:border-0 border-white`}>
@@ -127,7 +127,7 @@ export const Nav = () => {
         <Link href="/cart">
           <a
             className={` ${toggleMenu ? 'text-white' : 'text-brand'}  ${
-              router.asPath == '/cart' ? 'bg-green-200 rounded-md' : ''
+              router.pathname == '/cart' ? 'bg-green-200 rounded-md' : ''
             } ${
               screenWidth < 1024 ? '' : 'px-6'
             } py-2 text-lg text-center font-bold transition-all`}>

@@ -68,7 +68,7 @@ export const Nav = () => {
         <div className="flex items-center justify-between w-full -order-1 lg:order-[unset]">
           {/* Logo */}
           <Link href="/">
-            <a className="flex items-center gap-6 group">
+            <a className="flex items-center gap-6 m-auto group">
               <Image
                 src={`/images/logo/Logo-${toggleMenu ? 'white' : 'green'}.png`}
                 width={150}

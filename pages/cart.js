@@ -2,33 +2,10 @@ import {AiOutlineArrowRight} from 'react-icons/ai'
 
 import {useCart} from '../hooks/useCart'
 
-
-import Table from '../components/global/Table'
 import CartCard from '../components/cart/CartCard'
 
-const columns = [
-  {
-    columnId: 'title',
-    Header: 'Product Name',
-  },
-  {
-    columnId: 'quantity',
-    Header: 'Quantity',
-  },
-  {
-    columnId: 'pricePerUnit',
-    Header: 'Price Per Item',
-  },
-  {
-    columnId: 'total',
-    Header: 'Item Total',
-  },
-]
-
 export default function Home() {
-  const {cartItems, checkout, subtotal, quantity} = useCart()
-
-
+  const {checkout, subtotal, quantity} = useCart()
 
   return (
     <div className="max-w-5xl px-5 m-auto md:mt-20">
@@ -51,8 +28,6 @@ export default function Home() {
             </div>
           </button>
         </section>
-
-        {/* <Table data={data} columns={columns} /> */}
       </main>
     </div>
   )

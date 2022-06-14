@@ -1,10 +1,19 @@
-import React from 'react'
+import {useEffect} from 'react'
 import Image from 'next/image'
 import products from '../../data/products.json'
 import {useCart} from '../../hooks/useCart'
 
+import {RiDeleteBin6Line} from 'react-icons/ri'
+
 export default function CartCard() {
-  const {cartItems, checkout, updateItem} = useCart()
+  const {cartItems, updateItem} = useCart()
+
+  function handleDelete(id) {
+    updateItem({
+      id,
+      quantity: 0,
+    })
+  }
 
   const data = cartItems.map(({id, quantity, pricePerUnit}) => {
     const product = products.find(({id: pid}) => pid === id)
@@ -15,7 +24,6 @@ export default function CartCard() {
         e.preventDefault()
 
         const {currentTarget} = e
-        console.log(currentTarget)
 
         const inputs = Array.from(currentTarget.elements)
         const quantity = inputs.find(
@@ -30,9 +38,13 @@ export default function CartCard() {
 
       return (
         <form onSubmit={handleOnSubmit} className="flex justify-evenly">
-          <button className="text-2xl font-bold">-</button>
+          <button
+            onClick={() => handleClick('add')}
+            className="text-2xl font-bold">
+            -
+          </button>
           <input
-            className="text-center border rounded-lg w-[60px]"
+            className="text-center border rounded-lg w-[60px] mx-2"
             name="quantity"
             type="number"
             min={0}
@@ -56,6 +68,7 @@ export default function CartCard() {
       total: quantity * pricePerUnit,
     }
   })
+
   return (
     <div className="flex flex-col gap-6 md:col-span-3 ">
       {data.map((item) => {
@@ -64,7 +77,7 @@ export default function CartCard() {
           // Cart Card
           <div
             key={id}
-            className="grid items-center gap-10 px-8 py-8 border border-blue-200 rounded-lg shadow-lg md:grid-cols-4">
+            className="flex items-center gap-10 px-8 py-8 border border-blue-200 rounded-lg shadow-lg">
             <div
               style={{background: color}}
               className="w-[140px] h-auto px-3 rounded-xl">
@@ -83,6 +96,9 @@ export default function CartCard() {
             </div>
             {quantity}
             <h3>${total}.00</h3>
+            <button onClick={() => handleDelete(id)}>
+              <RiDeleteBin6Line size="1.25em" />
+            </button>
           </div>
         )
       })}

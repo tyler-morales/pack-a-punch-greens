@@ -86,6 +86,10 @@ export function useCartState() {
         }
       }
 
+      if (cart.products[id].quantity === 0) {
+        delete cart.products[id]
+      }
+
       return cart
     })
   }

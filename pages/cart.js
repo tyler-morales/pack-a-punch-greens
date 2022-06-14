@@ -1,10 +1,10 @@
-import {FaShoppingCart} from 'react-icons/fa'
+import {AiOutlineArrowRight} from 'react-icons/ai'
 
 import {useCart} from '../hooks/useCart'
 
-import products from '../data/products.json'
 
 import Table from '../components/global/Table'
+import CartCard from '../components/cart/CartCard'
 
 const columns = [
   {
@@ -26,58 +26,33 @@ const columns = [
 ]
 
 export default function Home() {
-  const {cartItems, checkout, updateItem} = useCart()
+  const {cartItems, checkout, subtotal, quantity} = useCart()
 
-  const data = cartItems.map(({id, quantity, pricePerUnit}) => {
-    const product = products.find(({id: pid}) => pid === id)
-    const {title} = product || {}
 
-    const Quantity = () => {
-      function handleOnSubmit(e) {
-        e.preventDefault()
-
-        const {currentTarget} = e
-        const inputs = Array.from(currentTarget.elements)
-        const quantity = inputs.find(
-          (input) => input.name === 'quantity'
-        )?.value
-
-        updateItem({
-          id,
-          quantity: quantity && parseInt(quantity),
-        })
-      }
-
-      return (
-        <form onSubmit={handleOnSubmit}>
-          <input
-            name="quantity"
-            type="number"
-            min={0}
-            defaultValue={quantity}
-          />
-          <button>Update</button>
-        </form>
-      )
-    }
-
-    return {
-      id,
-      title,
-      quantity: <Quantity />,
-      pricePerUnit: pricePerUnit,
-      total: quantity * pricePerUnit,
-    }
-  })
 
   return (
-    <div>
+    <div className="max-w-5xl px-5 m-auto md:mt-20">
       <main>
-        <Table data={data} columns={columns} />
-
-        <p>
-          <button onClick={checkout}>Check Out</button>
+        <h1 className="text-2xl">Shopping Cart</h1>
+        <p className="mt-2 font-medium">
+          You have {quantity} items in your cart
         </p>
+
+        <section className="relative grid grid-cols-1 gap-8 my-10 md:grid-cols-4">
+          <CartCard />
+
+          <button
+            onClick={checkout}
+            className="flex gap-10 px-6 py-4 font-bold text-white bg-blue-700 rounded-lg right-60 w-max h-min">
+            <span>Total: ${subtotal}.00</span>
+            <div className="flex items-center gap-2">
+              <span>Check Out </span>
+              <AiOutlineArrowRight size="1.25em" />
+            </div>
+          </button>
+        </section>
+
+        {/* <Table data={data} columns={columns} /> */}
       </main>
     </div>
   )

@@ -17,7 +17,7 @@ function MyApp({Component, pageProps}) {
       <Head>
         <title>Pack A Punch Greens | Get your microgreens</title>
       </Head>
-      <CartContext.Provider value={{cart}}>
+      <CartContext.Provider value={cart}>
         <Nav />
         <Component {...pageProps} />
       </CartContext.Provider>

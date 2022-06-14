@@ -6,8 +6,11 @@ import {useRouter} from 'next/router'
 import {Cross as Hamburger} from 'hamburger-react'
 import {FiShoppingCart} from 'react-icons/fi'
 
+import {useCart} from '../../hooks/useCart'
+
 export const Nav = () => {
   const router = useRouter()
+  const {subtotal, quantity, checkout} = useCart()
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(0)
@@ -71,7 +74,11 @@ export const Nav = () => {
           {(toggleMenu || screenWidth > 1024) && (
             <Link href="/microgreens">
               <a
-                className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand ml-8'} ${
+                className={` ${
+                  toggleMenu
+                    ? 'text-white text-center w-full'
+                    : 'text-brand ml-8'
+                } ${
                   router.pathname == '/microgreens' && !toggleMenu
                     ? 'bg-green-200 rounded-md'
                     : ''
@@ -84,7 +91,9 @@ export const Nav = () => {
           {(toggleMenu || screenWidth > 1024) && (
             <Link href="/about">
               <a
-                className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand'} ${
+                className={` ${
+                  toggleMenu ? 'text-white text-center w-full' : 'text-brand'
+                } ${
                   router.pathname == '/about' && !toggleMenu
                     ? 'bg-green-200 rounded-md'
                     : ''
@@ -97,7 +106,9 @@ export const Nav = () => {
           {(toggleMenu || screenWidth > 1024) && (
             <Link href="/sustainability">
               <a
-                className={` ${toggleMenu ? 'text-white text-center w-full' : 'text-brand'} ${
+                className={` ${
+                  toggleMenu ? 'text-white text-center w-full' : 'text-brand'
+                } ${
                   router.pathname == '/sustainability' && !toggleMenu
                     ? 'bg-green-200 rounded-md'
                     : ''
@@ -123,7 +134,6 @@ export const Nav = () => {
           )}
         </div>
 
-        {/* <div> */}
         <Link href="/cart">
           <a
             className={` ${toggleMenu ? 'text-white' : 'text-brand'}  ${
@@ -134,13 +144,14 @@ export const Nav = () => {
             <div className="flex items-center gap-3">
               <FiShoppingCart size="1.25em" />
               <span>Cart</span>
-              {/* <span className="font-medium bg-green-800 rounded-full w-[35px] text-white">
-                  1
-                </span> */}
+              {quantity > 0 && (
+                <span className="px-2 bg-green-200 rounded-full text-brand">
+                  {quantity} | ${subtotal}
+                </span>
+              )}
             </div>
           </a>
         </Link>
-        {/* </div> */}
 
         {/* Hamburger Menu Icon */}
         {screenWidth < 1024 && (

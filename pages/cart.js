@@ -1,7 +1,7 @@
 import {AiOutlineArrowRight} from 'react-icons/ai'
 
 import {useCart} from '../hooks/useCart'
-
+import Link from 'next/link'
 import CartCard from '../components/cart/CartCard'
 
 export default function Home() {
@@ -10,12 +10,15 @@ export default function Home() {
   return (
     <div className="m-auto max-w-7xl px-7 md:mt-20">
       <main>
-        <h1 className="text-2xl">Shopping Cart</h1>
-        <p className="mt-2 font-medium">
-          You have {quantity} items in your cart
-        </p>
+        <h1 className="text-2xl">🛍 Shopping Cart</h1>
 
         {cartItems > 0 && (
+          <p className="mt-2 font-medium">
+            You have {quantity} items in your cart
+          </p>
+        )}
+
+        {cartItems.length > 0 && (
           <button
             onClick={checkout}
             className="flex justify-between w-full gap-10 px-6 py-4 mt-10 font-bold text-white bg-blue-700 rounded-lg md:w-max">
@@ -27,9 +30,25 @@ export default function Home() {
           </button>
         )}
 
-        <section className="grid grid-cols-1 gap-16 my-10 md:grid-cols-3">
-          <span>You have no items in your cart</span>
-          {/* <CartCard /> */}
+        <section
+          className={`grid grid-cols-1 gap-16 my-10 md:grid-cols-3 ${
+            cartItems.length == 0 && 'items-center'
+          }`}>
+          {cartItems.length == 0 ? (
+            <div className="flex flex-col w-full col-span-2 text-xl font-medium text-center">
+              <span className="mb-4 text-base">Your cart is empty</span>
+              <span>
+                Start a{' '}
+                <Link href="/microgreens">
+                  <a className="text-blue-500 underline">Subscription</a>
+                </Link>{' '}
+                today!
+              </span>
+            </div>
+          ) : (
+            <CartCard />
+          )}
+
           <aside>
             <h3 className="mb-4 text-3xl">Subscription Model</h3>
             <h4 className="px-4 py-2 mt-8 mb-4 bg-orange-200 rounded-full w-max">
@@ -41,7 +60,7 @@ export default function Home() {
               to grow more or less of what you like.
             </p>
             <h4 className="px-4 py-2 mt-8 mb-4 bg-orange-200 rounded-full w-max">
-              Why subscribe
+              Why subscribe.
             </h4>
             <p className="font-medium">
               In order to be as efficent as we can when growing, a subscription
@@ -51,7 +70,7 @@ export default function Home() {
           </aside>
         </section>
 
-        {cartItems > 5 && (
+        {cartItems.length > 5 && (
           <button
             onClick={checkout}
             className="flex justify-between w-full gap-10 px-6 py-4 mb-10 font-bold text-white bg-blue-700 rounded-lg md:w-max">

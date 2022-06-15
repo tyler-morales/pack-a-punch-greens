@@ -37,20 +37,14 @@ export default function CartCard() {
       }
 
       return (
-        <form onSubmit={handleOnSubmit} className="flex justify-evenly">
-          <button className="text-2xl font-bold">-</button>
+        <form onSubmit={handleOnSubmit}>
           <input
             className="text-center border rounded-lg w-[60px] mx-2"
             name="quantity"
             type="number"
-            min={0}
+            min="0"
             defaultValue={quantity}
           />
-          <button className="text-2xl font-bold">+</button>
-
-          {/* <button className="px-4 py-2 bg-yellow-300 rounded-full">
-                Update
-              </button> */}
         </form>
       )
     }
@@ -65,6 +59,16 @@ export default function CartCard() {
     }
   })
 
+  const convertPackageToGrams = (ounces) => {
+    const grams = ounces * 28.3495
+    return grams
+  }
+
+  const convetPackageToOunces = (numOfPackages) => {
+    const ounces = numOfPackages * 2
+    return ounces
+  }
+
   return (
     <div className="flex flex-col gap-6 sm:col-span-2 ">
       {data.map((item) => {
@@ -73,7 +77,7 @@ export default function CartCard() {
           // Cart Card
           <div
             key={id}
-            className="flex flex-col items-center gap-4 px-8 py-4 border border-blue-200 rounded-lg shadow-lg md:gap-10 md:flex-row">
+            className="grid items-center justify-between px-8 py-4 border border-blue-200 rounded-lg shadow-lg grid-cols-cart_card md:gap-10">
             <div
               style={{background: color}}
               className="w-[140px] h-auto px-3 rounded-xl">
@@ -85,9 +89,17 @@ export default function CartCard() {
               />
             </div>
             <div>
-              <h2>{title}</h2>
+              <h2>
+                {title}
+                <span className="ml-2 text-sm font-medium text-gray-400">
+                  @ $7.00 each
+                </span>
+              </h2>
+
               <p className="mt-1 text-sm font-medium text-gray-402">
-                {total / 7} oz ({(28.3 * total) / 7}g) of {title} microgreens
+                {convetPackageToOunces(total) / 7} oz (
+                {(convertPackageToGrams(total) / 7).toFixed(2)} g) of {title}{' '}
+                microgreens
               </p>
             </div>
             {quantity}

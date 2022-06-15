@@ -38,11 +38,7 @@ export default function CartCard() {
 
       return (
         <form onSubmit={handleOnSubmit} className="flex justify-evenly">
-          <button
-            onClick={() => handleClick('add')}
-            className="text-2xl font-bold">
-            -
-          </button>
+          <button className="text-2xl font-bold">-</button>
           <input
             className="text-center border rounded-lg w-[60px] mx-2"
             name="quantity"
@@ -70,14 +66,14 @@ export default function CartCard() {
   })
 
   return (
-    <div className="flex flex-col gap-6 md:col-span-3 ">
+    <div className="flex flex-col gap-6 sm:col-span-2 ">
       {data.map((item) => {
         const {id, title, quantity, pricePerUnit, total, color} = item
         return (
           // Cart Card
           <div
             key={id}
-            className="flex items-center gap-10 px-8 py-8 border border-blue-200 rounded-lg shadow-lg">
+            className="flex flex-col items-center gap-4 px-8 py-4 border border-blue-200 rounded-lg shadow-lg md:gap-10 md:flex-row">
             <div
               style={{background: color}}
               className="w-[140px] h-auto px-3 rounded-xl">

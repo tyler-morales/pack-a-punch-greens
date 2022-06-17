@@ -85,7 +85,7 @@ export default function CartCard() {
                 alt={`${title} microgreens`}
                 width={300}
                 height={300}
-                src={`/images/products/packaging-${title}.png`}
+                src={`/images/products/packaging-${title.toLowerCase()}.png`}
               />
             </div>
             <div>

@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <>
       <MetaData
-        title="🌱 Pack A Punch Greens"
-        description="Shop healthy, fresh, and local Microgreens"
+        title="Pack A Punch Greens"
+        description="🌱 Shop healthy, fresh, and local Microgreens"
       />
       <main>
         <Hero />

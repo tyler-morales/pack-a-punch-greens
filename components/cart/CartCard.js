@@ -96,7 +96,7 @@ export default function CartCard() {
                 </span>
               </h2>
 
-              <p className="mt-1 text-sm font-medium text-gray-402">
+              <p className="mt-1 text-sm font-medium text-gray-400">
                 {convetPackageToOunces(total) / 7} oz (
                 {(convertPackageToGrams(total) / 7).toFixed(2)} g) of {title}{' '}
                 microgreens

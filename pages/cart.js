@@ -31,7 +31,7 @@ export default function Home() {
         )}
 
         <section
-          className={`grid grid-cols-1 gap-16 my-10 md:grid-cols-3 ${
+          className={`grid grid-cols-1 gap-16 my-10 lg:grid-cols-3 ${
             cartItems.length == 0 && 'items-center'
           }`}>
           {cartItems.length == 0 ? (
@@ -50,23 +50,46 @@ export default function Home() {
           )}
 
           <aside>
-            <h3 className="mb-4 text-3xl">Subscription Model</h3>
-            <h4 className="px-4 py-2 mt-8 mb-4 bg-orange-200 rounded-full w-max">
-              What is a subscription?
-            </h4>
-            <p className="font-medium">
-              You will recieve your current order of microgreens on a weekly
-              schedule. You can change your order, but expect a week to allow us
-              to grow more or less of what you like.
-            </p>
-            <h4 className="px-4 py-2 mt-8 mb-4 bg-orange-200 rounded-full w-max">
-              Why subscribe.
-            </h4>
-            <p className="font-medium">
-              In order to be as efficent as we can when growing, a subscription
-              based service in necessary. However, follow us on social media to
-              check when they&apos;ll be available near you!
-            </p>
+            <div>
+              <h3 className="mb-4 text-3xl">Subscription Model</h3>
+              <h4 className="px-4 py-2 mt-8 mb-4 bg-orange-200 rounded-full w-max">
+                What is a subscription?
+              </h4>
+              <p className="mb-2 font-medium">
+                You will recieve your current order of microgreens on a weekly
+                schedule.
+              </p>
+              <p className="font-medium">
+                You can change your order at any time or cancel, but expect a
+                week to allow us to grow more or less of what you like.
+              </p>
+              <h4 className="px-4 py-2 mt-8 mb-4 bg-orange-200 rounded-full w-max">
+                Why subscribe?
+              </h4>
+              <p className="font-medium">
+                In order to be as efficent as we can when growing, a
+                subscription based service in necessary. However, follow us on
+                social media to check when they&apos;ll be available near you!
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="mb-4 text-3xl">Quantity Guide</h3>
+              <h4 className="px-4 py-2 mt-8 mb-4 bg-pink-200 rounded-full w-max">
+                How many containers should I order?
+              </h4>
+              <ul>
+                <li className="mb-2 font-medium">
+                  1 container = 8 mini side-dishes
+                </li>
+                <li className="mb-2 font-medium">
+                  1 container = 4 side dishes
+                </li>
+                <li className="mb-2 font-medium">
+                  3 containers = 1 large (family-sized) salad bowl
+                </li>
+              </ul>
+            </div>
           </aside>
         </section>
 

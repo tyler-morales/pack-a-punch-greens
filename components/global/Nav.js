@@ -10,7 +10,7 @@ import {useCart} from '../../hooks/useCart'
 
 export const Nav = () => {
   const router = useRouter()
-  const {subtotal, quantity, checkout} = useCart()
+  const {quantity} = useCart()
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(0)
@@ -137,16 +137,16 @@ export const Nav = () => {
         <Link href="/cart">
           <a
             className={` ${
-              toggleMenu ? 'text-white' : 'text-brand right-0 z-50'
+              toggleMenu ? 'text-white' : 'text-brand'
             }  ${router.pathname == '/cart' ? 'bg-green-200 rounded-md' : ''} ${
               screenWidth < 1024 ? '' : 'px-6'
             } py-2 text-lg text-center font-bold transition-all`}>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <FiShoppingCart size="1.25em" />
               <span>Cart</span>
               {quantity > 0 && (
                 <span className="px-2 bg-green-200 rounded-full text-brand">
-                  {quantity} | ${subtotal}
+                  {quantity}
                 </span>
               )}
             </div>

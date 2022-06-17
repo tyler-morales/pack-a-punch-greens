@@ -70,14 +70,14 @@ export default function CartCard() {
   }
 
   return (
-    <div className="flex flex-col gap-6 sm:col-span-2 ">
+    <div className="flex flex-col gap-6 md:col-span-2 ">
       {data.map((item) => {
-        const {id, title, quantity, pricePerUnit, total, color} = item
+        const {id, title, quantity, total, color} = item
         return (
           // Cart Card
           <div
             key={id}
-            className="grid items-center justify-between grid-cols-2 gap-4 px-4 py-4 border border-blue-200 rounded-lg shadow-lg md:px-8 md:grid-cols-cart_card md:gap-10">
+            className="grid items-center justify-between grid-cols-2 gap-4 px-4 py-4 border border-blue-200 rounded-lg shadow-lg md:px-8 md:grid-cols-cart_card xl:gap-10">
             <div
               style={{background: color}}
               className="w-[140px] h-auto px-3 rounded-xl">
@@ -104,6 +104,7 @@ export default function CartCard() {
             </div>
             {quantity}
             <h3>${total}.00</h3>
+
             <button onClick={() => handleDelete(id)}>
               <RiDeleteBin6Line size="1.25em" />
             </button>

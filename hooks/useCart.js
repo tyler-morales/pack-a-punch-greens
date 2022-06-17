@@ -1,6 +1,8 @@
 import {useState, createContext, useContext, useEffect} from 'react'
 import {toast} from 'react-toastify'
 
+import {success} from '../lib/toasts'
+
 import {initiateCheckout} from '../lib/payments'
 import {getStorageItem, setStorageItem} from '../lib/storage.js'
 import products from '../data/products.json'
@@ -43,21 +45,15 @@ export function useCartState() {
     return accumulator + quantity
   }, 0)
 
+  const matchNameToId = (id) => {
+    return products.find((item) => item.id === id).title
+  }
+
   // Add an item to the cart
   function addToCart({id}) {
-    const message = `🛍 ${
-      products.find((item) => item.id === id).title
-    } microgreens added to your cart!`
-    
-    toast.success(message, {
-      position: 'top-center',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
+    const message = `🛍 ${matchNameToId(id)} microgreens added to your cart!`
+
+    toast.success(message, success)
 
     updateCart((prev) => {
       let cart = {...prev}

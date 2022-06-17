@@ -4,6 +4,10 @@ import {useCart} from '../../hooks/useCart'
 export default function ProductCard({products}) {
   const {addToCart, cartItems} = useCart()
 
+  const findProductByID = (id) => {
+    return cartItems.find((item) => id == item.id)
+  }
+
   return (
     <>
       {products.map((product) => {
@@ -40,14 +44,12 @@ export default function ProductCard({products}) {
               <button
                 onClick={() => addToCart({id})}
                 className={`w-full py-2 mt-4 font-bold text-center  rounded-lg border-2 border-green-600 ${
-                  cartItems.find((item) => id == item.id)?.quantity > 0
+                  findProductByID(id)?.quantity > 0
                     ? 'bg-green-600 text-white'
                     : 'text-green-600 '
                 }`}>
-                {cartItems.find((item) => id == item.id)
-                  ? `Added to cart Qty: ${
-                      cartItems.find((item) => id == item.id).quantity
-                    } `
+                {findProductByID(id)
+                  ? `Added to cart Qty: ${findProductByID(id).quantity} `
                   : 'Start a subscription'}
               </button>
               <p className="mt-4 text-sm font-medium text-center">

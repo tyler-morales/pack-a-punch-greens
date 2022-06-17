@@ -26,7 +26,7 @@ function MyApp({Component, pageProps}) {
           <ToastContainer
             toastClassName="bg-blue-600"
             position="top-center"
-            autoClose={8000}
+            autoClose={5000}
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick

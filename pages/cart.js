@@ -93,7 +93,7 @@ export default function Home() {
           </aside>
         </section>
 
-        {cartItems.length > 5 && (
+        {cartItems.length > 3 && (
           <button
             onClick={checkout}
             className="flex justify-between w-full gap-10 px-6 py-4 mb-10 font-bold text-white bg-blue-700 rounded-lg md:w-max">

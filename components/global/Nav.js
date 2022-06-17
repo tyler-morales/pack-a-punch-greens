@@ -58,7 +58,7 @@ export const Nav = () => {
           }`}>
           {/* Home page */}
           <Link href="/">
-            <a className="flex">
+            <a className="flex" onClick={() => setToggleMenu(false)}>
               <Image
                 src={`/images/logo/Logo-${toggleMenu ? 'white' : 'green'}.png`}
                 width={150}
@@ -74,6 +74,7 @@ export const Nav = () => {
           {(toggleMenu || screenWidth > 1024) && (
             <Link href="/microgreens">
               <a
+                onClick={() => setToggleMenu(false)}
                 className={` ${
                   toggleMenu
                     ? 'text-white text-center w-full'
@@ -91,6 +92,7 @@ export const Nav = () => {
           {(toggleMenu || screenWidth > 1024) && (
             <Link href="/about">
               <a
+                onClick={() => setToggleMenu(false)}
                 className={` ${
                   toggleMenu ? 'text-white text-center w-full' : 'text-brand'
                 } ${
@@ -106,6 +108,7 @@ export const Nav = () => {
           {(toggleMenu || screenWidth > 1024) && (
             <Link href="/sustainability">
               <a
+                onClick={() => setToggleMenu(false)}
                 className={` ${
                   toggleMenu ? 'text-white text-center w-full' : 'text-brand'
                 } ${
@@ -121,6 +124,7 @@ export const Nav = () => {
           {(toggleMenu || screenWidth > 1024) && (
             <Link href="/contact">
               <a
+                onClick={() => setToggleMenu(false)}
                 className={` ${
                   toggleMenu ? 'text-white text-center w-full' : 'text-brand'
                 }  ${
@@ -136,9 +140,9 @@ export const Nav = () => {
 
         <Link href="/cart">
           <a
-            className={` ${
-              toggleMenu ? 'text-white' : 'text-brand'
-            }  ${router.pathname == '/cart' ? 'bg-green-200 rounded-md' : ''} ${
+            className={` ${toggleMenu ? 'text-white' : 'text-brand'}  ${
+              router.pathname == '/cart' ? 'bg-green-200 rounded-md' : ''
+            } ${
               screenWidth < 1024 ? '' : 'px-6'
             } py-2 text-lg text-center font-bold transition-all`}>
             <div className="flex items-center gap-2">

@@ -16,7 +16,7 @@ export default function Products() {
         <div className="flex justify-center px-6 bg-green-100">
           <div className="w-[350px] py-20">
             <Image
-              src="/images/logo/packaging-broccoli.png"
+              src="/images/products/packaging-broccoli.png"
               width={300}
               height={300}
               layout="responsive"
@@ -38,7 +38,7 @@ export default function Products() {
         <div className="flex justify-center px-6 bg-rose-100">
           <div className="w-[350px] py-20">
             <Image
-              src="/images/logo/packaging-radish.png"
+              src="/images/products/packaging-radish.png"
               width={300}
               height={300}
               layout="responsive"
@@ -60,7 +60,7 @@ export default function Products() {
         <div className="flex justify-center px-6 bg-green-200">
           <div className="w-[350px] py-20">
             <Image
-              src="/images/logo/packaging-arugula.png"
+              src="/images/products/packaging-arugula.png"
               width={300}
               height={300}
               layout="responsive"

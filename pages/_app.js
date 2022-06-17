@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import {Nav} from '../components/global/Nav'
 import Footer from '../components/Footer'
-import Head from 'next/head'
 
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -10,6 +9,7 @@ import {CartContext, useCartState} from '../hooks/useCart'
 
 // Add Split bee tracking
 import splitbee from '@splitbee/web'
+import MetaData from '../components/global/MetaData'
 splitbee.init()
 
 function MyApp({Component, pageProps}) {
@@ -17,9 +17,6 @@ function MyApp({Component, pageProps}) {
 
   return (
     <>
-      <Head>
-        <title>Pack A Punch Greens | Get your microgreens</title>
-      </Head>
       <CartContext.Provider value={cart}>
         <Nav />
         <div>

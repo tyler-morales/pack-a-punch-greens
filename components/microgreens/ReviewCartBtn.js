@@ -6,8 +6,6 @@ export default function ReviewCartBtn() {
   const {quantity} = useCart()
   const [showDetails, setShowDetails] = useState(false)
 
-  console.log(quantity)
-
   return (
     <>
       {quantity > 0 && (

@@ -39,7 +39,7 @@ export default function CartCard() {
       return (
         <form onSubmit={handleOnSubmit}>
           <input
-            className="text-center border rounded-lg w-[60px] mx-2"
+            className="text-center border rounded-lg md:w-[60px] mx-2 w-full"
             name="quantity"
             type="number"
             min="0"
@@ -77,7 +77,7 @@ export default function CartCard() {
           // Cart Card
           <div
             key={id}
-            className="grid items-center justify-between px-8 py-4 border border-blue-200 rounded-lg shadow-lg grid-cols-cart_card md:gap-10">
+            className="grid items-center justify-between grid-cols-2 gap-4 px-4 py-4 border border-blue-200 rounded-lg shadow-lg md:px-8 md:grid-cols-cart_card md:gap-10">
             <div
               style={{background: color}}
               className="w-[140px] h-auto px-3 rounded-xl">

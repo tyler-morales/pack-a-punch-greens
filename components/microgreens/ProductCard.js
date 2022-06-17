@@ -2,7 +2,7 @@ import Image from 'next/image'
 import {useCart} from '../../hooks/useCart'
 
 export default function ProductCard({products}) {
-  const {addToCart, subtotal, quantity} = useCart()
+  const {addToCart, cartItems} = useCart()
 
   return (
     <>
@@ -39,8 +39,16 @@ export default function ProductCard({products}) {
               <p className="mt-6 font-medium">{description}</p>
               <button
                 onClick={() => addToCart({id})}
-                className="w-full py-2 mt-4 font-bold text-center bg-green-500 rounded-lg">
-                Start a Subscription
+                className={`w-full py-2 mt-4 font-bold text-center  rounded-lg border-2 border-green-600 ${
+                  cartItems.find((item) => id == item.id)?.quantity > 0
+                    ? 'bg-green-600 text-white'
+                    : 'text-green-600 '
+                }`}>
+                {cartItems.find((item) => id == item.id)
+                  ? `Added to cart Qty: ${
+                      cartItems.find((item) => id == item.id).quantity
+                    } `
+                  : 'Start a subscription'}
               </button>
               <p className="mt-4 text-sm font-medium text-center">
                 Starting at ${price} per 2oz container

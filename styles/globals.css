@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Toastify overrides */
+.Toastify__toast {
+  background: rgb(29, 78, 216) !important;
+}
+
 html,
 body {
   padding: 0;
@@ -68,4 +73,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  opacity: 1;
 }

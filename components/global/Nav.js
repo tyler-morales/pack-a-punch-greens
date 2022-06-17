@@ -51,7 +51,7 @@ export const Nav = () => {
       <div
         className={`${
           toggleMenu ? 'py-8 items-start' : 'py-4 items-center'
-        } flex justify-between max-w-7xl px-5 m-auto lg:flex-row `}>
+        } flex justify-between max-w-7xl px-5 m-auto lg:flex-row`}>
         <div
           className={`flex items-center gap-2 ${toggleMenu ? 'flex-col' : ''} ${
             screenWidth < 1024 ? 'order-2' : ''
@@ -136,9 +136,9 @@ export const Nav = () => {
 
         <Link href="/cart">
           <a
-            className={` ${toggleMenu ? 'text-white' : 'text-brand'}  ${
-              router.pathname == '/cart' ? 'bg-green-200 rounded-md' : ''
-            } ${
+            className={` ${
+              toggleMenu ? 'text-white' : 'text-brand right-0 z-50'
+            }  ${router.pathname == '/cart' ? 'bg-green-200 rounded-md' : ''} ${
               screenWidth < 1024 ? '' : 'px-6'
             } py-2 text-lg text-center font-bold transition-all`}>
             <div className="flex items-center gap-3">

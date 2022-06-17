@@ -17,6 +17,9 @@ export default function QuickInfo() {
               <p className="mt-6 font-medium md:text-left">
                 Grown 7–12 days in an urban aeroponic farm
               </p>
+              <p className="mt-2 font-medium md:text-left">
+                Stays fresh for up to 2 weeks
+              </p>
             </div>
 
             {/* Image */}

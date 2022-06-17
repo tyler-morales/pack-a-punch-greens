@@ -6,7 +6,10 @@ import MetaData from '../components/global/MetaData'
 export default function microgreens() {
   return (
     <>
-      <MetaData title="🌱 Microgreens Shop" description="Pack A Punch Greens" />
+      <MetaData
+        title="🌱 Microgreens Shop"
+        description="🌱 Shop healthy, fresh, and local Microgreens"
+      />
       <main className="relative px-5 m-auto my-10 max-w-7xl">
         <h1 className="text-5xl font-bold text-brand md:text-7xl">
           <span>Get</span> <span>Your Microgreens Weekly</span>
